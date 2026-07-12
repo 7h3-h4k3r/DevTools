@@ -1,0 +1,16 @@
+{
+  "name": "gruntshow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.6.2",
+    "grunt-contrib-concat": "^2.1.0",
+    "grunt-contrib-watch": "^1.1.0"
+  }
+}
