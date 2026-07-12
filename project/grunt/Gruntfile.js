@@ -43,6 +43,14 @@ module.exports = function(grunt){
                 }
             }
         },
+        copy: {
+            main: {
+                expand: true,
+                cwd: 'bower_components/jquery/dist/',
+                src: ['jquery.min.js'],
+                dest: '../../htdocs/js/',
+            },
+        },
         watch: {
             css: {
                 files: [
@@ -71,7 +79,8 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.registerTask('default',['concat','cssmin','uglify','watch']);
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.registerTask('default',['concat','copy','cssmin','uglify','watch']);
     
     
 }
