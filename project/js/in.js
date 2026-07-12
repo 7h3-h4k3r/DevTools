@@ -1,1 +1,1 @@
-alert("Grunt loaded ok call-watch-succesfully")
+alert("Grunt loaded watch-succesfully")

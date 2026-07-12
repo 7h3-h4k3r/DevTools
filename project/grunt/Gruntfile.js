@@ -1,3 +1,5 @@
+const { option } = require("grunt");
+
 module.exports = function(grunt){
     
     grunt.initConfig({
@@ -9,14 +11,14 @@ module.exports = function(grunt){
             },
             css: {
                 src: ["../css/**/*.css"],
-                dest: 'dist/style.css',
+                dest: 'dist/css/style.css',
             },
             js: {
                 src: [
                     "bower_components/jquery/dist/jquery.js",
                     "../js/**/*.js"
                 ],
-                dest: '../../htdocs/js/script.js',
+                dest: 'dist/js/script.js',
             },
         },
         cssmin: {
@@ -24,9 +26,20 @@ module.exports = function(grunt){
                 mergeIntoShorthands: false,
                 roundingPrecision: -1
             },
-            target: {
+            cssmin_run: {
                 files: {
-                    '../../htdocs/css/style.css': ['dist/style.css']
+                    '../../htdocs/css/app.min.css': ['dist/css/style.css']
+                }
+            }
+        },
+        uglify: {
+            
+            jsmin_run: {
+                option: {
+                    sourceMap: true,
+                },
+                files: {
+                    '../../htdocs/js/app.min.js': ['dist/js/script.js']
                 }
             }
         },
@@ -46,7 +59,7 @@ module.exports = function(grunt){
                     
                     '../js/**/*.js'
                 ],
-                tasks: ['concat:js'],
+                tasks: ['concat:js','uglify'],
                 options: {
                     spawn: false,
                 },
@@ -57,7 +70,8 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.registerTask('default',['concat','cssmin','watch']);
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.registerTask('default',['concat','cssmin','uglify','watch']);
     
     
 }
