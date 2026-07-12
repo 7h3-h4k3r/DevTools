@@ -1,7 +1,0 @@
-{
-  "devDependencies": {
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-cssmin": "^5.0.0",
-    "grunt-contrib-uglify": "^5.2.2"
-  }
-}
