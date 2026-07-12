@@ -9680,5 +9680,5 @@ return jQuery;
 
 } );
 
-alert("Grunt loaded call-watch-succesfully")
+alert("Grunt loaded ok call-watch-succesfully")
 //# sourceMappingURL=script.js.map
