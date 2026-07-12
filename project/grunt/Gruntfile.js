@@ -15,7 +15,7 @@ module.exports = function(grunt){
             },
             js: {
                 src: [
-                    "bower_components/jquery/dist/jquery.js",
+                    
                     "../js/**/*.js"
                 ],
                 dest: 'dist/js/script.js',
@@ -51,6 +51,20 @@ module.exports = function(grunt){
                 dest: '../../htdocs/js/',
             },
         },
+        obfuscator: {
+            options: {
+                banner: '// obfuscated with grunt-contrib-obfuscator.\n',
+                debugProtection: true,
+                debugProtectionInterval: 4000
+            },
+            task1: {
+                files: {
+                    '../../htdocs/js/app.o.js': [
+                        'dist/js/script.js'
+                    ]
+                }
+            }
+        },
         watch: {
             css: {
                 files: [
@@ -67,7 +81,7 @@ module.exports = function(grunt){
                     
                     '../js/**/*.js'
                 ],
-                tasks: ['concat:js','uglify'],
+                tasks: ['concat:js','uglify','obfuscator'],
                 options: {
                     spawn: false,
                 },
@@ -80,7 +94,8 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.registerTask('default',['concat','copy','cssmin','uglify','watch']);
+    grunt.loadNpmTasks('grunt-contrib-obfuscator-4');
+    grunt.registerTask('default',['concat','copy','cssmin','uglify','obfuscator','watch']);
     
     
 }

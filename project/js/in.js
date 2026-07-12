@@ -1,1 +1,1 @@
-alert("Grunt loaded watch-succesfully")
+alert("Grunt loaded obfuscator world")
