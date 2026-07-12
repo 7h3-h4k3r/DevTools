@@ -1,0 +1,18 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"name": "",
+			"path": "project/grunt",
+			"script": "test",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"label": "npm: test - project/grunt",
+			"detail": "cd  /home/oxbin-sh/Downloads/DevEnv/project/grunt && grunt"
+		}
+	]
+}
