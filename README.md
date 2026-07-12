@@ -78,18 +78,6 @@ grunt obfuscator
 grunt watch
 ```
 
-## Project Structure
-
-```
-project/
-├── src/
-├── dist/
-├── htdocs/
-├── Gruntfile.js
-├── package.json
-└── README.md
-```
-
 ## Goals
 
 This repository is part of my journey to learn build automation tools and improve my frontend development workflow. As I continue learning, I'll add more Grunt plugins, optimization techniques, and best practices.
