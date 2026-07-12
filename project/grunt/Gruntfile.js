@@ -11,10 +11,21 @@ module.exports = function(grunt){
                 src: ["../css/**/*.css"],
                 dest: '../../htdocs/css/style.css',
             },
+            js: {
+                src: [
+                    "bower_components/jquery/dist/jquery.js",
+                    "../js/**/*.js"
+                ],
+                dest: '../../htdocs/js/script.js',
+            },
         },
+        
         watch: {
             scripts: {
-                files: ['../css/**/*.css'],
+                files: [
+                    '../css/**/*.css',
+                    '../js/**/*.js'
+                ],
                 tasks: ['concat'],
                 options: {
                     spawn: false,

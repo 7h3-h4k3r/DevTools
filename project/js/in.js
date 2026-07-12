@@ -1,0 +1,1 @@
+alert("Grunt loaded call-watch-succesfully")
